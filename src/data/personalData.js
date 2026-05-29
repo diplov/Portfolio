@@ -5,7 +5,7 @@ export const personalData = {
   phone: "9846029863",
   location: "Birauta, Pokhara - Kaski",
   portfolioUrl: "https://myportfolio-icydfg0y9-diplovkhatri.vercel.app",
-  summary: "Dedicated Programming Instructor with over two years of hands-on teaching experience. Passionate about breaking down complex technical concepts into accessible and engaging lessons for diverse learners. Skilled in curriculum design, student mentoring, and academic performance assessment, with a strong software engineering background that brings real-world relevance to the classroom.",
+  summary: "Seasoned Software Engineer and Technical Instructor with over four years of experience in full-stack web development and curriculum design. Skilled in delivering production-grade applications (Laravel, Node.js, React/Vue), building RESTful APIs, and mentoring teams and students. Proven ability to translate complex problems into maintainable solutions and drive successful project delivery.",
   
   skills: {
     frontend: ["React.js", "Vue.js", "HTML/CSS"],
