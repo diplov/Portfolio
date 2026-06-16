@@ -12,9 +12,7 @@ exports.handler = async (event) => {
     const { name, email, message } = JSON.parse(event.body);
 
     const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
+      service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -27,11 +25,11 @@ exports.handler = async (event) => {
       replyTo: email,
       subject: `Portfolio Contact from ${name}`,
       text: `
-Name: ${name}
-Email: ${email}
+        Name: ${name}
+        Email: ${email}
 
-Message:
-${message}
+        Message:
+        ${message}
       `,
     });
 
@@ -42,11 +40,14 @@ ${message}
   } catch (err) {
     console.error(err);
 
+     console.error("FULL ERROR:", err);
+
     return {
       statusCode: 500,
       body: JSON.stringify({
         success: false,
-        error: 'Failed to send email',
+        error: err.message,
+        stack: err.stack,
       }),
     };
   }
