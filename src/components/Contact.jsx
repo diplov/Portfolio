@@ -1,36 +1,54 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { personalData } from '../data/personalData';
-import { FiMail, FiPhone, FiMapPin, FiGlobe, FiSend } from 'react-icons/fi';
+import { FiMail, FiMapPin, FiGlobe, FiSend } from 'react-icons/fi';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
   const [focused, setFocused] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const { name, email, message } = form;
-    if (!name || !email || !message) return;
+  const { name, email, message } = form;
 
-    // Build mailto URL
-    const subject = `Portfolio Contact from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoLink = `mailto:${personalData.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  if (!name || !email || !message) return;
 
-    // Open default email client
-    window.location.href = mailtoLink;
+  try {
+    const response = await fetch('/.netlify/functions/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+      }),
+    });
 
-    // Show success message
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || 'Failed to send');
+    }
+
     setSent(true);
     setTimeout(() => setSent(false), 4000);
-    setForm({ name: '', email: '', message: '' });
-  };
+    setForm({
+      name: '',
+      email: '',
+      message: '',
+    });
+  } catch (error) {
+    console.error(error);
+    alert('Failed to send message');
+  }
+};
 
   const contactItems = [
     { icon: <FiMail size={16} />, label: 'EMAIL', value: personalData.email, href: `mailto:${personalData.email}` },
-    { icon: <FiPhone size={16} />, label: 'PHONE', value: personalData.phone, href: `tel:${personalData.phone}` },
     { icon: <FiMapPin size={16} />, label: 'LOCATION', value: personalData.location, href: null },
     { icon: <FiGlobe size={16} />, label: 'PORTFOLIO', value: 'OPEN PORTFOLIO', href: personalData.portfolioUrl },
   ];
