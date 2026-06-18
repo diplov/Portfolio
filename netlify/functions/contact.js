@@ -20,7 +20,7 @@ exports.handler = async (event) => {
     });
 
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from: email,
       to: process.env.EMAIL_USER, // your inbox
       replyTo: email,
       subject: `Portfolio Contact from ${name}`,

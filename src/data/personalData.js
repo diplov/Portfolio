@@ -2,16 +2,16 @@ export const personalData = {
   name: "Er. Diplov Khatri",
   title: "Asso. Software Engineer",
   email: "diplovkhatri99@gmail.com",
-  location: "Birauta, Pokhara - Kaski",
+  location: "Birauta, Pokhara - Kaski, Nepal",
   portfolioUrl: "https://diplovkhatri.com.np/",
-  summary: "Seasoned Software Engineer and Technical Instructor with over four years of experience in full-stack web development and curriculum design. Skilled in delivering production-grade applications (Laravel, Node.js, React/Vue), building RESTful APIs, and mentoring teams and students. Proven ability to translate complex problems into maintainable solutions and drive successful project delivery.",
+  summary: "Software Engineer with over two years of professional experience building backend services and full-stack web applications. Skilled in Node.js, Python, Laravel (PHP), React, and Vue.js, with strong hands-on experience in MySQL and PostgreSQL. Experienced in writing clean, well-documented RESTful APIs and delivering production-ready solutions. Proficient in debugging production issues through log analysis, SQL investigation, and systematic root cause analysis — focused on permanent fixes rather than workarounds. Comfortable in agile teams using GitHub for branching, pull requests, and code reviews, with a proven ability to take a problem from investigation through to code fix, testing, and deployment.",
   
   skills: {
-    frontend: ["React.js", "Vue.js", "HTML/CSS"],
-    backend: ["Node.js", "Laravel (PHP)"],
+    frontend: ["React.js", "Vue.js"],
+    backend: ["Node.js", "Laravel (PHP)","Express.js", "Python"],
     database: ["PostgreSQL", "MySQL", "NoSQL"],
-    languages: ["C", "C++", "Java", "C#", "PHP"],
-    other: [".NET Framework", "Visual Basic"]
+    languages: ["JavaScript", "Python", "PHP", "Java"],
+    devTools: ["Git","REST APIs Design","CI/CD (Basic)"]
   },
   
   education: [
@@ -52,16 +52,17 @@ export const personalData = {
       {
         title: "Software Engineer",
         company: "CloudTech Services",
-        period: "April 2025 – Present",
+        period: "Present",
         responsibilities: [
-          "Developed and maintained full-stack web applications using Laravel (PHP) and Vue.js",
+          "Design RESTful APIs and develop dynamic front-end interfaces using Laravel PHP and Vue.js",
+          "Maintained full-stack web applications using Laravel (PHP) and Vue.js",
           "Collaborated with cross-functional teams to deliver scalable and maintainable software solutions"
         ]
       },
       {
         title: "Full Stack Intern",
         company: "CloudTech Services",
-        period: "January 2025 – March 2025",
+        period: "",
         responsibilities: [
           "Built RESTful APIs and dynamic front-end interfaces using Laravel PHP and Vue.js",
           "Gained hands-on experience in agile development workflows and code review processes"
@@ -83,7 +84,7 @@ export const personalData = {
       {
         title: "Programming Instructor",
         company: "Shree Birethanti Secondary School, Kaski",
-        period: "February 2023 – January 2025",
+        period: "",
         responsibilities: [
           "Delivered structured curriculum in C, C++, Java, and C# to secondary-level students",
           "Designed practical assignments and assessments to strengthen student problem-solving skills",
