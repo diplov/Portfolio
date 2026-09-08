@@ -7,7 +7,7 @@ const categories = [
   { key: 'backend', label: 'BACKEND', color: '#00ff88', glow: 'rgba(0,255,136,0.4)' },
   { key: 'database', label: 'DATABASE', color: '#bf00ff', glow: 'rgba(191,0,255,0.4)' },
   { key: 'languages', label: 'LANGUAGES', color: '#ffd700', glow: 'rgba(255,215,0,0.4)' },
-  { key: 'other', label: 'OTHER', color: '#ff6b6b', glow: 'rgba(255,107,107,0.4)' },
+  { key: 'devTools', label: 'DEV TOOLS', color: '#ff6b6b', glow: 'rgba(255,107,107,0.4)' },
 ];
 
 export default function Skills() {
